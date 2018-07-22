@@ -1,0 +1,43 @@
+<div>
+    <br>
+    <div class="tabs" style="margin-top:-1rem">
+        <ul>
+            <li class="is-active">Home</li>
+            <li><a href="#/categories">Categories</a></li>
+        </ul>
+    </div>
+    <div class="columns">
+        <div class="column">
+            <figure class="image">
+                <img src="../assets/home1.png">
+            </figure>
+        </div>
+    </div>
+    <div class="columns is-multiline is-mobile">
+        <div class="column is-one-third-mobile" v-for="i in itemList.slice(0,3)">
+            <a :href="'/#/product/' + i.id">
+                <figure class="image">
+                    <img :src="'/api/v1/image/' + i.cover_img_file">
+                </figure>
+                <div class="title is-6 has-text-centered" style="margin-top: 0.5rem; font-size: 0.7rem;">{{i.currency}} {{i.price}}</div>
+            </a>
+        </div>
+    </div>
+    <div class="columns">
+        <div class="column">
+            <figure class="image">
+                <img src="../assets/sale.png">
+            </figure>
+        </div>
+    </div>
+    <div class="columns is-multiline is-mobile">
+        <div class="column is-one-third-mobile" v-for="i in itemList.slice(4,7)">
+            <a :href="'/#/product/' + i.id">
+                <figure class="image">
+                    <img :src="'/api/v1/image/' + i.cover_img_file">
+                </figure>
+                <div class="title is-6 has-text-centered" style="margin-top: 0.5rem; font-size: 0.7rem;">{{i.currency}} {{i.price}}</div>
+            </a>
+        </div>
+    </div>
+</div>

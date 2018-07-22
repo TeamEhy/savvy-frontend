@@ -1,0 +1,13 @@
+.head-block{
+	padding: 8px;
+	border-top: 1px solid #eee;
+}
+
+.item-block{
+	padding: 9px;
+	border-bottom: 1px solid #ddd;	
+}
+
+.subtitle{
+	margin-bottom: 4px !important;
+}

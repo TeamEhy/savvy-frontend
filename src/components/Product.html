@@ -1,0 +1,35 @@
+<div v-if="product">
+    <br>
+    <div class="columns is-multiline is-mobile">
+        <div class="column">
+            <figure class="image">
+                <img :src="'/api/v1/image/' + product.cover_img_file">
+            </figure>
+<br>
+	<div class="columns is-mobile is-multiline">
+		<div class="column">
+			<div class="subtitle is-6" style="margin-bottom: 0.5rem">{{product.name}}</div>
+		<p class="has-text-weight-semibold is-size-6">
+		Hafa Yasir</p>
+		</div>
+		<br>
+		<div class="column">
+			<div class="title is-6 has-text-right">{{product.price | currency(product.currency, 2, {spaceBetweenAmountAndSymbol: true})}}</div>
+		</div>
+	</div>
+	<div class="subtitle is-6" style="margin-bottom: 0.5rem; margin-top:0.5rem;">Quantity</div>
+	<b-field>
+            <b-select placeholder="Choose quantity" v-model="quantity" expanded>
+                <option v-for="i in [1,2,3,4,5,6,7,8,9,]">{{i}}</option>
+            </b-select>
+        </b-field>
+        </div> 
+    </div>
+	<div class="columns">
+		<div class="column">
+			<button class="button is-black is-fullwidth" @click="addToCart()">Add to Cart</button>
+		</div>
+	</div>
+</div>
+
+

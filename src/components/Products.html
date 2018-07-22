@@ -1,0 +1,32 @@
+<div>
+    <br>
+    <div class="title is-6">{{category.name}}</div>
+    <div  v-for="(product, index) in items">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-one-third-mobile">
+                <a :href="'/#/product/' + product.id">
+                    <figure class="image">
+                        <img :src="'/api/v1/image/' + product.cover_img_file">
+                    </figure>
+                    <div class="title is-6 has-text-centered" style="margin-top: 0.5rem; font-size: 0.7rem;">   {{product.price | currency(product.currency, 2, {spaceBetweenAmountAndSymbol: true})}}</div>
+                </a>
+            </div>
+            <div class="column is-one-third-mobile">
+                <a :href="'/#/product/' + product.id">
+                    <figure class="image">
+                        <img :src="'/api/v1/image/' + product.cover_img_file">
+                    </figure>
+                    <div class="title is-6 has-text-centered" style="margin-top: 0.5rem; font-size: 0.7rem;">   {{product.price | currency(product.currency, 2, {spaceBetweenAmountAndSymbol: true})}}</div>
+                </a>
+            </div>
+            <div class="column is-one-third-mobile">
+                <a :href="'/#/product/' + product.id">
+                    <figure class="image">
+                        <img :src="'/api/v1/image/' + product.cover_img_file">
+                    </figure>
+                    <div class="title is-6 has-text-centered" style="margin-top: 0.5rem; font-size: 0.7rem;">   {{product.price | currency(product.currency, 2, {spaceBetweenAmountAndSymbol: true})}}</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

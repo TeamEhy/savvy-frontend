@@ -1,0 +1,18 @@
+<div>
+    <br>
+    <div class="tabs" style="margin-top:-1rem">
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li class="is-active"><a>Categories</a></li>
+        </ul>
+    </div>
+    <div class="columns" v-for="c in categories">
+        <div class="column">
+            <a :href="'#/products/' + c.id">
+                <figure class="image">
+                    <img :src="'/api/v1/image/' + c.cover_img_file">
+                </figure>
+            </a>
+        </div>
+    </div>
+</div>

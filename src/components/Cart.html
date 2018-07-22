@@ -1,0 +1,41 @@
+<div v-if="cart">
+    <br>
+	<div class="columns is-mobile is-multiline" style="border-bottom: 1px solid black"> 
+		<div class="column">
+			<div class="title is-5">My Cart</div>
+		</div>
+		<div class="column">
+			<div class="subtitle is-6 has-text-right">{{cart.length}} Items</div>
+		</div>
+	</div>
+    <div class="columns is-multiline is-mobile" style="border-bottom: 1px solid black" v-for="product in cart">
+        <div class="column is-one-third-mobile">
+            <figure class="image">
+                <img :src="'/api/v1/image/' + product.cover_img_file">
+            </figure>
+        </div>
+    
+        <div class="column is-two-third-mobile">
+            	<div class="title is-6">{{product.item_name}}</div>	
+        	<b-field label="Quantity">
+        	<b-input type="number" v-model="product.quantity">
+            </b-input>
+		</b-field>
+		<br>
+        	<div class="title is-6 has-text-right">{{product.price | currency(product.currency, 2, {spaceBetweenAmountAndSymbol: true})}}</div> 
+        </div>
+    </div>
+<div class="columns" style="border-bottom: 1px solid black">
+	<div class="column">
+
+        	<div class="title is-6 has-text-right">Total: {{totalSum | currency('MVR', 2, {spaceBetweenAmountAndSymbol: true})}}</div> 
+</div>
+</div>
+    <div class="column">
+    	<a href="/#/checkout" class="button is-black is-pulled-right is-fullwidth">CHECKOUT</a>
+    </div>
+<br>
+</div>
+
+
+       
